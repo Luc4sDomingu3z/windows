@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         "main": "1fr 32px"
+      },
+      gridTemplateColumns: {
+        "footer": "repeat(auto-fit, 32px)"
       }
     },
   },
