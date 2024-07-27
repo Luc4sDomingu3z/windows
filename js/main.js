@@ -1,5 +1,5 @@
 import Desktop, * as components from "./modules/components.js";
-import { Block } from "./modules/commands.js";
+import { Block, Sign } from "./modules/commands.js";
 
 
 Desktop.addEventListener('DOMContentLoaded', function (e) {
@@ -8,6 +8,7 @@ Desktop.addEventListener('DOMContentLoaded', function (e) {
 
     Desktop.addEventListener('keyup', (e) => {
         Block(e);
+        Sign(e);
     })
 
 })
