@@ -10,7 +10,7 @@ export function Block(event) {
     console.log(code)
 
     if (ShiftKey && code === 'keyl') {
-        components.screenBlock.showModal()
+        components.screenBlock.classList.remove('opacity-0')        
     }
 
     // if (ShiftKey && code === )
@@ -24,7 +24,7 @@ export function Sign(event) {
     const code = event.code.toLowerCase()
 
     if (code === 'space' && !ShiftKey) {
-        if (components.screenBlock.open) {
+        if (!components.screenBlock.classList.contains('opacity-0')) {
             components.screenBlockBootLayer.classList.add('opacity-0')
             components.screenBlockPasswordLayer.classList.remove('opacity-0')
         }
@@ -33,5 +33,12 @@ export function Sign(event) {
     if ((code === 'backspace' && ShiftKey) && !components.screenBlockPasswordLayer.classList.contains('opacity-0'))  {
         components.screenBlockPasswordLayer.classList.add('opacity-0')
         components.screenBlockBootLayer.classList.remove('opacity-0')
+    }
+
+    if (!components.screenBlockPasswordLayer.classList.contains('opacity-0')) {
+        if (code === 'escape') {
+            components.screenBlockPasswordLayer.classList.add('opacity-0')
+            components.screenBlockBootLayer.classList.remove('opacity-0')
+        }
     }
 }
