@@ -13,15 +13,11 @@ Desktop.addEventListener('DOMContentLoaded', function (e) {
     })
 
     LoadUsersList(Users.users())
+    
+    const Lucas = new User("Lucas", "senha")
+    const Noel = new User("Noel", "senha")
+    Lucas.save()
+    Noel.save()
 
-    // const Lucas = new User("Lucas Dominguez", "comendoCuDeCurioso")
-    // Lucas.save()
-
-    // const Emanuel = new User("Emanuel Ferreira", "gostoso")
-    // Emanuel.save()
-
-    // const Luana = new User("Luana Chacrinha", "ecaMeleca")
-    // Luana.save()
-
-    // const mochefe = new User("Mochefe", "171")
+    Users.deluser(Lucas.nome)
 })
