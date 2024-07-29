@@ -30,15 +30,25 @@ export function Sign(event) {
         }
     }
 
+
+    //#region Leave login screen
     if ((code === 'backspace' && ShiftKey) && !components.screenBlockPasswordLayer.classList.contains('opacity-0'))  {
         components.screenBlockPasswordLayer.classList.add('opacity-0')
         components.screenBlockBootLayer.classList.remove('opacity-0')
     }
-
+    
     if (!components.screenBlockPasswordLayer.classList.contains('opacity-0')) {
         if (code === 'escape') {
             components.screenBlockPasswordLayer.classList.add('opacity-0')
             components.screenBlockBootLayer.classList.remove('opacity-0')
         }
     }
+    // #endregion
+}
+
+
+export function LoadUsersList(users) {
+    if (typeof users !== 'object' && !users && components.screenBlockUsers) return false;
+
+    const div = document.createElement("div").classList.add("w-full")
 }

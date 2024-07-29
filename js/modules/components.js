@@ -19,8 +19,14 @@ export const screenBlockBootLayer = Desktop.getElementById('bloqueio-layer-1')
 /** Camada de conta do usuário - Tela de bloqueio */
 export const screenBlockPasswordLayer = Desktop.getElementById('bloqueio-layer-2') 
 
+/** Rodapé da tela de login - Tela de bloqueio */
+export const screenBlockFooter = Desktop.getElementById('login-footer')
+
+/** Container de usuários */
+export const screenBlockUsers = Desktop.getElementById('login-users')
+
 /** Barra de tarefas */
-export const desktopFooter = Desktop.getElementById('taskbar') 
+export const taskbar = Desktop.getElementById('taskbar') 
 
 
 export { Desktop as default }
