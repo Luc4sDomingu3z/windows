@@ -2,7 +2,7 @@ export class Users {
 
   static users() {
     const storage = window.localStorage.getItem("users");
-    if (storage && storage.length == 0) {
+    if (storage.length == 0) {
       return null;
     } else {
       return JSON.parse(storage);
@@ -51,12 +51,12 @@ export class Users {
     if (!nome || !senha) return false;
 
     const users = Users.users()
-    for (let _u of users) {
-      if (_u.nome === nome) {
+    for (let _u of users)
+      if (_u.nome === nome)
         break;
-      }
-    }
     console.log('Usuário identificado.', nome)
+
+    
   }
 
 }

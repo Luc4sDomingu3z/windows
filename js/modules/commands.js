@@ -13,6 +13,7 @@ export function Block(event) {
 
     if (ShiftKey && code === 'keyl') {
         components.screenBlock.classList.remove(...css)
+        
     }
 
     if (ShiftKey && code === 'keyj') {
