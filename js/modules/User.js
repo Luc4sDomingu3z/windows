@@ -2,7 +2,7 @@ export class Users {
 
   static users() {
     const storage = window.localStorage.getItem("users");
-    if (storage.length == 0) {
+    if (storage && storage.length == 0) {
       return null;
     } else {
       return JSON.parse(storage);
