@@ -38,7 +38,6 @@ export class Users {
     if (typeof index === 'number') {
       const storage = this.users()
       storage.splice(index, 1)
-      console.log(storage)
 
       window.localStorage.setItem("users", JSON.stringify(storage))
       return true
@@ -47,7 +46,21 @@ export class Users {
     return false;
   }
 
+  static login(nome, senha) {
+
+    if (!nome || !senha) return false;
+
+    const users = Users.users()
+    for (let _u of users) {
+      if (_u.nome === nome) {
+        break;
+      }
+    }
+    console.log('Usuário identificado.', nome)
+  }
+
 }
+
 
 export default class User extends Users {
   constructor(nome, senha) {
@@ -69,7 +82,6 @@ export default class User extends Users {
 
     if (storage !== null && (typeof storage === 'object' && storage.length > 0)) {
       const issetUser = Users.findIt(this.nome)
-      console.log(issetUser)
       if (issetUser >= 0) {
         storage[issetUser].nome = this.nome
         storage[issetUser].senha = this.senha
@@ -77,14 +89,10 @@ export default class User extends Users {
         storage.push({ nome: this.nome, senha: this.senha })
       }
       window.localStorage.setItem("users", JSON.stringify(storage))
-      console.log(storage[issetUser])
       return true
     }
 
     return false
   }
 
-  login() {
-    console.log(Users.users());
-  }
 }

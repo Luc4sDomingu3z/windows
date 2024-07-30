@@ -40,7 +40,7 @@
         </section>
     </footer>
 
-    <menu class="absolute inset-0 block transition-all ease-in w-full h-full bg-zinc-800 overflow-hidden z-20 backdrop:bg-black outline-none opacity-0" id="bloqueio">
+    <menu class="absolute inset-0 block transition-all ease-in w-full h-full bg-zinc-800 overflow-hidden z-20 backdrop:bg-black outline-none opacity-0 pointer-events-none select-none" id="bloqueio">
         <section class="w-full h-full relative" id="bloqueio-container">
             <img src="./img/block.jpg" id="bloqueio-background" class="absolute select-none pointer-events-none inset-0 object-cover object-center w-full h-full" alt="">
 
@@ -56,8 +56,8 @@
 
                 <section class="flex flex-row justify-between items-end w-full">
                     <div class="flex flex-col gap-3 p-3 pb-20 font-light">
-                        <h1 class="text-9xl">15:34</h1>
-                        <p class="text-4xl indent-1">quinta-feira, 25 de Julho</p>
+                        <h1 class="text-9xl" id="block-hour">15:34</h1>
+                        <p class="text-4xl indent-1" id="block-date">quinta-feira, 25 de Julho</p>
                     </div>
                     <div class="p-3">
                         <ion-icon class="" size="large" name="globe-outline"></ion-icon>
@@ -70,16 +70,17 @@
                     <div class="max-w-56 w-full aspect-square opacity-75 bg-transparent relative">
                         <ion-icon name="person-circle" class="w-full object-cover absolute h-full font-light"></ion-icon>
                     </div>
-                    <h1 class="text-5xl font-light pb-3">Lucas Dominguez</h1>
+                    <h1 class="text-5xl font-light pb-3" id="user-chosen-title">Administrador</h1>
                     <form action="" method="post" class="mt-2">
                         <fieldset class="max-w-96 w-full flex flex-row gap-0 flex-nowrap justify-center border-2 border-zinc-400">
+                            <input type="text" class="hidden" hidden value="" id="user-chosen">
                             <label for="senha" class="w-full flex flex-row flex-nowrap relative">
                                 <input type="password" id="senha" class="bg-white w-full h-full leading-4 px-2 py-1 outline-none text-zinc-900" placeholder="Senha" required>
                                 <button type="button" class="flex items-center justify-center bg-white text-zinc-400 px-2">
                                     <ion-icon name="eye"></ion-icon>
                                 </button>
                             </label>
-                            <button type="button" class="bg-zinc-500 p-1 px-2 bg-opacity-50">
+                            <button type="button" class="bg-zinc-500 p-1 px-2 bg-opacity-50" id="signin">
                                 <ion-icon name="arrow-forward"></ion-icon>
                             </button>
                         </fieldset>
